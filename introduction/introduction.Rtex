@@ -1,0 +1,19 @@
+
+This is template for thesis. I created it for my own need when I had to write PhD confirmation thesis and searched for some default Massey \LaTeX template. To my surprise I have found that Massey do not support any \LaTeX template and even their instruction for how should thesis be written are sparse and weird. So I decided to improve life of other people that comes after me and also spread \LaTeX a bit more and created this template. If you are experienced user, you might use it as starting point, it is your work and \LaTeX enables great deal of personalization, so feel free to modify it, improve it and so on. If you are starting user of \LaTeX, you might be grateful for a working template that looks good, is not overcombined with fancy stuff and provide good setting, from page layout (notably reduction of empty space), usage of good citation style for bibtex (APA is best) and also decent titlepage.
+
+Additionally to this, this template is made with knitr on mind. If you don't like knitr or don't want to use knitr, just use \verb|\include{chapter_folder/chapter.tex}| instead of 
+%% begin.rcode chapter_hook, echo=FALSE, comment=NA
+% cat(" %% begin.rcode your_chapter, child=\"chapter_folder/chapter.Rtex\"\n",
+% "% end.rcode")
+% end.rcode
+
+to include children \LaTeX files, change ending to \verb|.tex| instead of \verb|.Rtex|, although this is just cosmetic change, and compile it directly with pdflatex instead of using first knitr engine.
+
+I suggest you to at least try to use knitr. If you do, and you have linux or unix, you can use rcompile.r script to compile your Rtex document. I believe that together we can find solution for Windows as well. Finally, I suggest that you have a full installation of texlive, on which this template was build, and also three R packages:
+\begin{itemize}
+    \item Knitr
+    \item tikzDevice -- transform R graphics to tikz, which nicely unifies look
+    \item xtable -- to create \LaTeX tables directly in R
+\end{itemize}
+
+I have included some example of knitr usage. Also, feel free to look at source code. I tried to make it well-documented.

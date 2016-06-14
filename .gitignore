@@ -1,0 +1,13 @@
+*~
+figure/
+minimal/
+*.aux
+*.bbl
+*.blg
+*.lof
+*.log
+*.lot
+*.out
+*.tex
+*.toc
+*-tikzDictionary

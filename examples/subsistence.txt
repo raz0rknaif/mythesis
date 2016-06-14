@@ -1,0 +1,123 @@
+name	hunting	gathering	fishing
+Polar-Inuit	40	10	50
+Tareumiut	30	0	70
+Yukaghir	50	10	40
+Ona (Selknam)	70	10	20
+Angmagsalik	20	0	80
+Sivokakhmeit	15	5	80
+Copper Inuit	40	0	60
+Iglulingmiut	50	0	50
+Nunamiut	87	3	10
+Yahgan	20	10	70
+Caribou Inuit	50	10	40
+Naskapi (Innu)	70	10	20
+Alacaluf	20	10	70
+N. Tlingit	30	10	60
+Chipewyan	60	0	40
+Tutchone	45	10	45
+Kaska	40	10	50
+Gilyak	30	20	50
+Tanaina (Denaina)	40	10	50
+Bella Coola (Nuxalk)	20	20	60
+Bella Bella	30	20	50
+Chugach Inuit	20	0	80
+Kutchin (Gwichin)	40	10	50
+Slavey (Dené thá)	50	10	40
+Ojibwa	40	30	30
+Mistassini Cree	50	20	30
+Ingalik (Deg Hitan)	40	10	50
+Nunivak	30	10	60
+Tanana	70	10	10
+S. Tlingit	30	10	60
+Tsimshian	20	20	60
+Haida	20	20	60
+Chilcotin	30	20	50
+Tahltan	50	10	40
+Carrier (Dakelne)	40	20	40
+Makah	20	20	60
+Sarsi	80	20	0
+Blackfoot (Siksika)	80	20	0
+Quinault	30	20	50
+Plains Cree	60	20	20
+Aleut	10	30	60
+Montagnais	60	20	20
+S. Kwakiutl (Ft. Rupert)	20	30	50
+Ute (Uintah)	35	40	25
+Saulteaux	35	20	45
+Assiniboine	70	20	10
+Uncompahgre	50	35	15
+Ainu	20	30	50
+Wind River Shoshone	50	30	20
+Flathead	40	30	30
+Klamath	20	30	50
+Washo	30	40	30
+Puyallup-Nisqually	20	30	50
+Twana	30	10	60
+Wadadika (Ruby Valley)	30	50	20
+Shuswap	30	30	40
+Agaiduka (Lemhi)	30	30	40
+Nootka (Nuuchahnulth)	20	20	60
+Alsea	20	10	70
+Coast Yuki	20	40	40
+Sanpoil	20	30	50
+Micmac	50	10	40
+Sinkyone	30	40	30
+Timpanogots (Utah L.)	30	40	30
+Tubatulabal	30	50	20
+Gosiute	40	50	10
+Kidutokado (N. Paiute)	20	50	30
+Crow (Apsaalooke)	80	20	0
+Yurok	10	40	50
+Nez Perce	30	30	40
+Tolowa	20	40	40
+Kuyuidokado (Pyramid L.)	20	50	30
+Achumawi	40	30	30
+Tenino	20	30	50
+Cheyenne	80	20	0
+Umatilla	30	30	40
+Modoc	30	50	20
+W. Mono	40	50	10
+Maidu	30	50	20
+Atsugewi	30	40	30
+Kaibab (S. Paiute)	30	70	0
+Shasta	30	40	30
+Kiowa-Apache	80	20	0
+Comanche	90	10	0
+Botocudo (Kaingang)	40	50	10
+Kiowa	90	10	0
+Wintu	30	30	40
+Diegueno (Tipai-Ipai)	40	50	10
+Kade Gwi	20	80	0
+Sierra Miwok	30	60	10
+Panamint	40	60	0
+Cahuilla	40	60	0
+Kawaiisu	30	50	20
+Luiseno	20	60	20
+Walapai	40	60	0
+Moapa	40	60	0
+Borjeno (Baja Calif)	18	57	25
+Dieri	30	70	0
+Aranda	40	60	0
+S.E. Yavapai	40	60	0
+N. E. Yavapai	40	60	0
+Aweikoma	60	40	0
+Karankawa	30	40	30
+Hadza	35	65	30
+Kariera	50	30	20
+Seri	25	25	50
+Walpiri (Walbiri)	30	70	0
+Juhoansi (Dobe)	20	80	0
+Gwi	15	85	0
+Groote Eylandt	10	30	60
+Wikmunkan	40	40	20
+Siriono	25	70	5
+Aeta	60	35	5
+Anbarra	13	22	65
+Tiwi	30	50	20
+Vedda	35	45	20
+Gidjingali	30	50	20
+Murngin	30	50	20
+Semang	35	50	15
+Mbuti	60	30	10
+Andamanese (Onge)	20	40	40
+Penan	30	70	0
