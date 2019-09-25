@@ -10,4 +10,7 @@ minimal/
 *.out
 *.tex
 *.toc
+*.fdb_latexmk
+*.fls
 *-tikzDictionary
+old

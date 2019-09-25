@@ -1,0 +1,136 @@
+%% mythesis style for LaTeX2e.
+%
+% Style for postgraduate theses at Massey University.
+% author: Jiří Moravec
+% date: July, 2015
+% last update: 2018
+%
+% Based on muthesis style by Stephen Marsland
+% but it is more fancy.
+
+\NeedsTeXFormat{LaTeX2e}
+\RequirePackage{fancyhdr}
+\RequirePackage{setspace}
+\RequirePackage{hyperref}
+\RequirePackage[width=.90\textwidth,font={small,sf}]{caption}
+\newif\ifonehalfsp@
+\newif\ifdoublesp@
+\newif\ifblackl@
+\doublesp@false
+\onehalfsp@false
+
+\DeclareOption{onehalfspace}{\onehalfsp@true}
+\DeclareOption{doublespace}{\doublesp@true}
+
+\DeclareOption{blacklinks}{\blackl@true}
+\ProcessOptions
+
+%% Disallow page breaks at hyphens (this will give some underfull vbox's,
+%% so an alternative is to use \brokenpenalty=100 and manually search
+%% for and fix such page breaks)
+\brokenpenalty=10000
+
+\hypersetup{hidelinks=true}
+
+
+%% Set up line spacing, the default is singlespacing
+\AtBeginDocument{%
+    \ifdoublesp@%
+        \doublespacing%
+    \else
+        \ifonehalfsp@%
+            \onehalfspacing%
+        \else%
+            \singlespacing%
+        \fi%
+    \fi
+%\ifblackl@
+%    \hypersetup{
+%        %colorlinks,%=false
+%        hidelinks=true
+%        }
+%    \else\typeout{********************blackfalse*****************}
+%\fi%
+    } % Simple example of ifelse I used for some debugging.
+
+
+% Better date
+\newcommand{\monthtext}{%
+  \ifcase\the\month
+  \or January% 1
+  \or February% 2
+  \or March% 3
+  \or April% 4
+  \or May% 5
+  \or June% 6
+  \or July% 7
+  \or August% 8
+  \or September% 9
+  \or October% 10
+  \or November% 11
+  \or December% 12
+  \fi}
+
+
+%% Sensible margins, default margins are too big.
+\usepackage[top=22mm, bottom=24mm, left=34mm, right=25mm, headsep=6mm,
+            footskip=8mm, includeheadfoot, headheight=14pt]{geometry}
+
+
+%% Before abstract definition.
+% contains titlepage, table of content and list of tables and figures.
+\def\beforeabstract{
+    \pagenumbering{roman}
+    \pagestyle{plain}
+    \maketitle
+    \cleardoublepage
+    }
+
+\def\afterabstract{
+    \tableofcontents % adds table of contents
+    \addcontentsline{toc}{chapter}{Contents} % adds Contents into table of contents
+    \cleardoublepage
+    \addvspace{10pt}
+    \listoftables
+    \addcontentsline{toc}{chapter}{List of tables}
+    \cleardoublepage
+    \addvspace{10pt}
+    \listoffigures
+    \addcontentsline{toc}{chapter}{List of figures}
+    \newpage
+    }
+
+%% Definition of simple chapters used in preface section.
+\def\prefacesection#1{%
+        \chapter*{#1}
+        \addcontentsline{toc}{chapter}{#1}}
+
+
+
+%% After preface definition of style
+% Change numbering to arabic, and style to fancy 
+% (with head and foot definition). It also redefine plain style,
+% as first chapter page is always plain.
+\def\afterpreface{
+    \newpage
+    \pagenumbering{arabic}
+    \pagestyle{fancy}
+    \fancypagestyle{plain}{%
+        \fancyhf{}
+        \if@twoside
+            \fancyfoot[RO]{\small \thepage}% TWOSIDE
+            \fancyfoot[LE]{\small \thepage}% TWOSIDE
+        \else
+            \fancyfoot[R]{\small \thepage}% ONESIDE
+        \fi
+        \renewcommand{\headrulewidth}{0pt}
+        \renewcommand{\footrulewidth}{0pt}
+        }
+    \fancyhf{}%
+    \if@twoside
+        \fancyhead[CO]{\small \leftmark\ \hfill  \thepage}% TWOSIDE
+        \fancyhead[CE]{\small \thepage\  \hfill \leftmark}% TWOSIDE
+    \else
+        \fancyhead[C]{\small \leftmark\ \hfill \thepage}% ONESIDE
+    \fi
+    }
