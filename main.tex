@@ -1,0 +1,249 @@
+%% Sample tex file for thesis
+% this text is heavily commented to help understand all those packages
+
+%% Defining document class:
+% book and report provide more settings, book slightly more than report
+% both are decent choice for thesis
+%\documentclass[12pt, a4paper, twoside, openright, final]{book}
+\documentclass{book}
+% 12pt -- size of text
+% a4paper -- size of paper
+% oneside, twoside -- chose if you want one-sided or two-sided work
+%                       twosided is for better layout and saving paper
+%                       onesided is more "traditional" and makes your work
+%                       seem bigger, please don't.
+% openright, openany -- new chapters are on right pages (for twoside) 
+
+%% loading thesis template
+\usepackage{thesis}
+
+%% --------------------------------------------------------------------------- %
+%% basic packages for language support: -------------------------------------- %
+% Encoding:
+% Use proper encoding of your document. This is INPUT, eg. how you write this
+% file.
+% This template is written in Ubuntu with utf8, when you are on windows
+% and you are using different than standard english encoding, use yours.
+% Otherwise your special symbols would be corrupted.
+\usepackage[utf8]{inputenc}
+% Examples:
+% usepackage[latin1]{inputenc} % western european, very common
+% usepackage[cp1250]{inputenc} % central and eastern european
+
+% Fonts:
+% Use proper fonts, if you are using special symbols in your work,
+% you should use those that enables them. This is OUTPUT, eg. how it will
+% appear in translated PDF.
+% Standard english fonts are too poor. If you are international student,
+% use fonts that enables you to write your name properly and also names of
+% other scientists in your references.
+\usepackage[T1]{fontenc} % This is common standard. Use it.
+                         % Even when you write purely in English, and you ignore
+                         % all that fuss about diacritic of other languages,
+                         % use it.
+%Other examples:
+%\usepackage[IL2]{fontenc} % special fonts for Czech and Slovak languages,
+                           % some people require diacritic to be exactly in
+                           % the right spot.
+% On my computer, default T1 fonts are ugly. This is modern version of
+% Computer-modern, which is prettier. On your computer, you may have this
+% version installed by default or not installed at all.
+\usepackage{lmodern}
+
+\usepackage[english]{babel} % better support for english
+                            % you can set support for different language in
+                            % similar way
+
+%% --------------------------------------------------------------------------- %
+%% basic packages for language support: -------------------------------------- %
+
+%% Above package are a must and required for correct language support and should 
+%% Packages bellow stem from essential in everyday work (figures, tables, bibliography) to helpful (appendix, math support), but not essential.
+%% you should read the pdf documentation of each package if you need its function 
+%% go to https://ctan.org/pkg/ or just type "latex <package name>" into google or duckduckgo
+
+
+%% Change how chapter title is typesetted:
+\usepackage{titlesec}
+\titleformat{\chapter}[block]{\normalfont\Huge\bfseries\raggedright}{\thechapter.}{1ex}{}{}
+
+%% quotes: use \enquote{} to quote something, csquotes will then translate this into quotation according to language's requirement (i.e., quotes are different in English, Spanish, French or Czech depending on the babel package). csquotes also enables you to quote passages from books.
+\usepackage{csquotes}
+
+%% floats and graphical packages:
+%%% recommended:
+\usepackage[table]{xcolor} % loads colors, tools for more color support and many others
+\usepackage{booktabs} % for prettier tables, see examples
+\usepackage{graphicx} % support image manipulation
+\usepackage{placeins} % for float barrier
+
+%%% useful:
+% \usepackage{pdfpages} % enables you to insert another PDF (such as published paper)
+% \usepackage{subcaption} % if you have several subfigures, use this package
+% \usepackage{wrapfig} % wrapping figure around text, note that wrapfig is a bit finicky and hard to make look good
+% \usepackage{makecell} % if your tables have very complex design, this package gives you more precise formatting of single cell in table, you can split the cell horizontally
+% \usepackage{multirow} % if your tables have very complex design, this package enables you to merge cells along row (similar to base multicolumn command) 
+% \usepackage{adjustbox} % resizing of environment, useful if you need to squash your tables just a little bit to fit into page
+% \usepackage{longtable} % if you have very long tables across multiple pages, you can typeset them with this package
+% \usepackage{pdflscape} % if your page is supposed to be horizontal instead of vertical, e.g., for very wide table on figure, this will rotate the whole environment 90 degrees while making sure it still looks good
+
+%% math support:
+\usepackage{amssymb} % more and prettier math symbols
+\usepackage{amsmath} % more and prettier math commands, such as matrices with [ or ( borders
+\usepackage{mathtools} % extends amsmath package with more of the same
+
+
+% appendices
+\usepackage[titletoc,title]{appendix}
+
+
+%% tikz and its modules:
+\usepackage{tikz} % great library for drawing graphs, mindmaps.
+% For data-driven
+% graphs, use R or your favorite language/software. Or R with knitr for integrated experience.
+\usetikzlibrary{automata, arrows, positioning, backgrounds}
+% example of various tikz libraries
+
+%% misc
+\usepackage{enumerate} % you can personalize enumerate environment, such as 1) 2) 3); a:, b:, c: or anything else
+\usepackage{microtype} % microtypographical correction, text should look nicer, reduction in big gaps between words or excessive splitting of word into two lines.
+
+% references:
+\usepackage{natbib} % Better support for referenes, more commands for referencing.
+
+% filler text:
+\usepackage{blindtext}
+
+% ------------------------------------------------------------------------------------------------ %
+% Macros
+% ------------------------------------------------------------------------------------------------ %
+
+% Custom title-pages
+% -- check what your school requires
+% -- you can be creative, but do not overdo it
+% example 1: (from my thesis)
+%\renewcommand\maketitle{
+%    \thispagestyle{empty}
+%    \begin{center}
+%    {\Huge\bf \LaTeX template for confirmation reports and theses}
+%    \vskip 0.5in
+%    {A thesis presented in partial fulfilment of the\\ requirements for the degree of}
+%    \vskip 1.5in
+%    {\Large Doctor of Philosophy \\[-0.3em] in \\ Statistics}
+%    \vskip 1.5in
+%    {\Large at Massey University, Manawatu,\\ New Zealand.}
+%    \vskip 2em
+%    \includegraphics{logo/massey_logo-long-small}\\[1.5in]
+%    { \Large Jiří Moravec }
+%    \vskip 2em
+%    \the\year
+%    \end{center}
+%    \newpage
+%    }
+
+% example 2 (from my confirmation report)
+% currently active (uncomented)
+\renewcommand\maketitle{%
+    \thispagestyle{empty}%
+    \null\vskip1in%
+    \begin{flushleft}
+    \hrulefill\\
+    \Huge\textbf{\LaTeX template for confirmation reports and theses}
+    \vskip0.5em
+    \Large\textbf{thesis or report}\\
+    \large\textbf{Jiří Moravec}\\[-0.7em]
+    \hrulefill\\
+    \vskip0.5em
+    \begin{tabular}{@{}ll@{}}
+    Supervisors: & supervisor 1\\
+                 & supervisor 2
+    \end{tabular}
+    \end{flushleft}    
+    \vskip1in
+    \begin{center}
+    \includegraphics{logo/massey_logo-long-small}\\[2em]
+    \large{Institute of Fundamental Sciences,\\
+           Massey University, New Zealand}
+    \vskip1in
+    \large \monthtext, \the\year
+    \end{center}
+    \newpage
+    }
+
+%% simple todo macro to highlight unfinished stuff in PDF
+\newcommand{\TODO}[1]{\textcolor{red}{\bf TODO} \textcolor{blue}{ #1 }}
+
+% small code snippets (mostly just package/command) can be done with this
+% use package lstlisting if you have a lot of code snippets
+\definecolor{light-gray}{gray}{0.95}
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+
+%% operators
+\DeclareMathOperator{\sign}{sign}
+% math operators are in roman, while other math text is cursive. This will
+% enable you to write \sign for proper signum math operator. By default, there
+% are operators for log, sin, cos and so on.
+
+
+\raggedbottom % all pages do not have exactly the same height, but approximately same
+% this helps strech or compress pages a bit to allow better placement of figures and/or tables
+
+
+\begin{document}
+% don't worry about all these commands, they come mostly from the Book environment
+% and some from our template
+\frontmatter
+
+\beforeabstract
+
+
+\prefacesection{Acknowledgement}
+%\input{acknowledgement/acknowledgement.tex}
+
+\prefacesection{Abstract}
+%\input{abstract/abstract.tex}
+
+\afterabstract
+
+\afterpreface
+\mainmatter
+
+% redefining the chapter symbol to be simpler and less fancy
+\renewcommand{\chaptermark}[1]{\markboth{{\thechapter.\ #1}}{}}
+
+\chapter{Introduction}
+% if you want to refer to specific chapter, section, figure or table, write:
+% \label{tag} next to the chapter, section, figure or table and refer to it with:
+% \ref{tag}.
+% Keep your tags unique and informative.
+% use for example, use: fig:figurename, tab:tablename, eq:equationname to refer to figures, tables and equations.
+\label{chapter:introduction} % refer back to this tag with \ref{chapter:introduction}
+\input{1_introduction/introduction.tex} % Do not put all your thesis into a single file, use \input instead.
+
+\chapter{Examples}
+\input{2_examples/examples.tex}
+
+
+%% Uncomment for appendices
+%\begin{appendices}
+%\chapter{appendix 1}
+%\input{appendices/appendix_1}
+%\end{appendices}
+
+
+%%Bibliography
+%% Pick bibliography style that you like or your field requires.
+%% I feel that APA style is best as it has the best mix of information, brevity and readability.
+%% apalike package is the easiest APA package to use.
+\bibliographystyle{apalike}
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\setlength{\bibsep}{7pt}
+{\footnotesize \bibliography{bibliography/bibliography}}
+% Bibliography is very important, but doesn't have to take that much space. Default
+% bibliography has too much space between each item and the font is unnecessary big.
+% Space is corrected by \setlength{\bibsep}{7pt}, you can experiment with different values.
+% Size is corrected by \footnotesize. If you want it bigger, you can either
+% delete this command or use \small for slightly larger font.
+\end{document}
