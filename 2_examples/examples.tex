@@ -1,0 +1,44 @@
+\blindtext
+
+\section{tikZ}
+
+Tikz is awesome tool with which you can make, or write, to be precise, vector-based graphics. It is a bit hard to start, manual itself has 800 pages, but you have a whole library of examples which you can leverage, edit and then apply. See \url{http://www.texample.net/tikz/examples/}. It is still faster to make specific data-based graphs in R and transform them into tikz with tikzDevice package (easilly done with knitr), but for some graphs, this may be the way to go (namely if you are unable to work with standard graphical software like me and you expect to edit your graphs frequently).
+
+\colorlet{darkgreen}{green!50!black}
+\colorlet{darkyellow}{yellow!50!black}
+\begin{figure}[hb]
+    \begin{center}
+        \begin{tikzpicture}[>=latex, auto, semithick, node distance=3cm]
+        \tikzstyle{community}=[circle,fill=black,draw=black,thick,text=white,scale=1]
+        \tikzstyle{empty}=[circle,fill=white,draw=black,thick,text=black,scale=1]
+
+        \foreach \x in {0,1,2,3,4,5}
+            \foreach \y in {0,1,2,3,4,5}
+            {
+                \node at (\x,\y) [empty] {};
+                }
+        \node (A) at (2,2) [community] {A};
+        \node (B) at (2,3) [community] {B};
+        \node (C) at (3,4) [community] {C};
+        \node (D) at (5,1) [community] {D};
+        \begin{pgfonlayer}{background}
+        \path[fill=blue!30] (0,0) rectangle (4,4) {};
+
+        \end{pgfonlayer}
+        \draw[dashed] (0,2) -- (0.5,2) node[below] {$D_I$} -- (A);
+        \path (A) edge[<->,bend left,color=darkgreen] (B); 
+        \path (A) edge[<->,bend right,color=red] (C);
+
+        \node[community] (1) at (9,4) {1};
+        \node[community] (2) at (9,2) {2};
+        \path (1) edge[<->] node[sloped, scale=0.8, midway, above, rotate=180] (bond) {bond} (2);
+        \node[scale=0.7] (marriage) at (7,3) {Marriage};
+        \node[scale=0.7] (warfare) at (11,3) {Warfare};
+        \path (marriage) edge[->] node[above] {+} (bond)
+              (marriage) edge[loop] node[above] {+} (marriage);
+        \path (warfare) edge[->] node[above] {$-$} (bond)
+              (warfare) edge[loop] node[above] {+} (warfare);
+        \end{tikzpicture}
+    \end{center}
+    \caption{Example of two images made in tikz.}
+\end{figure} 
